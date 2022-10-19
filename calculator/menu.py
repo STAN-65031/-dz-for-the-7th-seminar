@@ -6,6 +6,39 @@ import model_remainder_of_division as s5
 import model_pow as s6
 import model_integer_division as s7
 
+
+def number_selection_menu ():
+    while True:
+        print("Введите 0 что бы закрыть")
+        print("Введите 1 что бы выбрать целые числа")
+        print("Введите 2 что бы выбрать рациональные числа")
+        print("Введите 3 что бы выбрать комлексные числа")
+        def input_numbers(inputText):
+            okey = False
+            while not okey:
+                try:
+                    number = int(input(f"{inputText}"))
+                    okey = True
+                    if 0 > number < 4:
+                        okey = False
+                        print("'это число не подходит")
+                except ValueError:
+                    print("Какое-то неправильное число!")
+            return number
+
+        s = input_numbers("Выберите действие: ")
+        if s == 0:
+            break
+        if s == 1:
+            return "whole"
+        elif s == 2:
+            return "fractional"
+        elif s == 3:
+            return "rational"
+
+
+
+
 def grid (value_a, value_b):
     while True:
         print("Введите 0 что бы закрыть")
