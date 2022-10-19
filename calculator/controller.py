@@ -10,6 +10,6 @@ def button_click():
     value_a = view.get_value(number_type)
     value_b = view.get_value(number_type)
     print()
-    result = s.grid(value_a, value_b)
+    result = s.grid(value_a, value_b, number_type)
     print()
     view.view_data(result, "resul ")

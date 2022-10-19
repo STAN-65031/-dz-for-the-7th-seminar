@@ -39,7 +39,7 @@ def number_selection_menu ():
 
 
 
-def grid (value_a, value_b):
+def grid (value_a, value_b, number_type):
     while True:
         print("Введите 0 что бы закрыть")
         print("Введите 1 что бы сложить")
@@ -75,16 +75,22 @@ def grid (value_a, value_b):
             s3.init(value_a,value_b)
             return s3.do_it()
         elif s == 4:
-            s4.init(value_a,value_b)
-            return s4.do_it()
-        elif s == 5:
+            if value_b != 0:
+                s4.init(value_a,value_b)
+                return s4.do_it()
+            else:
+                print("Деление на ноль!")
+        elif s == 5 and not number_type == "rational":
             s5.init(value_a,value_b)
             return s5.do_it()
         elif s == 6:
             s6.init(value_a,value_b)
             return s6.do_it()
-        elif s == 7:
+        elif s == 7 and not number_type == "rational":
             s7.init(value_a,value_b)
             return s7.do_it()
+        else:
+            print("Неверный знак операции!")
+            
 
 
